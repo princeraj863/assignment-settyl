@@ -4,7 +4,6 @@ set();
  
  function chk2(value) {
    for(let i in myMap){
-    console.log(myMap[i]);
     if(myMap[i]==value)
       return 0;
    }
@@ -30,7 +29,7 @@ set();
     key +=i, value +=j;
     myMap[key] = value;
   }
-  console.log(myMap);
+  //console.log(myMap);
  }
 
  function chk3(value) {
@@ -53,7 +52,7 @@ function allowDrop(ev) {
 function drag(ev) {
   
   ev.dataTransfer.setData("text", ev.target.id);
-  console.log(ev.target.id);
+ // console.log(ev.target.id);
 }
 
 async function drop(ev) {
@@ -64,8 +63,8 @@ async function drop(ev) {
    var value=ev.target.id;
    
   
-  await console.log(ev.target.id);
-  console.log(data);
+  //await console.log(ev.target.id);
+  //console.log(data);
   
 
   chk3(value);
@@ -73,6 +72,6 @@ async function drop(ev) {
   {myMap[key]=value; ev.target.appendChild(document.getElementById(data));}
 
 
- console.log(myMap);
+ //console.log(myMap);
 
 }
