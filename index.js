@@ -12,24 +12,15 @@ set();
  }
 
  function set(){
-  for(let i=1;i<=4;i++){
+  for(let i=1;i<=14;i++){
     let key="drag", value="div";
     key +=i , value +=i
     myMap[key] = value;
   }
-  for(let i=5;i<=8;i++){
-    let key="drag", value="divx";
-    let j=i-4;
-    key +=i ,value +=j;
-    myMap[key] = value;
-  }
-  for(let i=9;i<=12;i++){
-    let key="drag", value="divy";
-    let j=i-8;
-    key +=i, value +=j;
-    myMap[key] = value;
-  }
-  //console.log(myMap);
+
+
+ 
+
  }
 
  function chk3(value) {
@@ -52,7 +43,6 @@ function allowDrop(ev) {
 function drag(ev) {
   
   ev.dataTransfer.setData("text", ev.target.id);
- // console.log(ev.target.id);
 }
 
 async function drop(ev) {
@@ -61,17 +51,9 @@ async function drop(ev) {
    var data =  ev.dataTransfer.getData("text");
    var key=data;
    var value=ev.target.id;
-   
   
-  //await console.log(ev.target.id);
-  //console.log(data);
-  
-
-  chk3(value);
   if(chk2(value) && chk3(value))
   {myMap[key]=value; ev.target.appendChild(document.getElementById(data));}
 
-
- //console.log(myMap);
 
 }
